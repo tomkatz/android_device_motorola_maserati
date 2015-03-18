@@ -4,11 +4,11 @@
 # rild.libpath=/system/lib/libril-moto-umts-1.so
 rild.libpath=/system/lib/libmoto_ril.so
 rild.libargs=-d /dev/ttyO0
-telephony.lteOnCdmaDevice=1
+telephony.lteOnCdmaDevice=0
 ro.mot.ril.danlist=611,*611,#611
 persist.ril.ecclist=911,*911,#911
 
-persist.ril.modem.mode =1
+persist.ril.modem.mode=2
 
 # USB modes allowed for UI and switching
 ro.ngp_available=1
@@ -16,7 +16,7 @@ ro.modem_available=0
 
 # Default network type.
 # 7 => GLOBAL. Till LTE SFN.
-ro.telephony.default_network=10
+ro.telephony.default_network=3
 ro.com.google.clientid=android-motorola
 ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
 ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
@@ -77,7 +77,7 @@ mot.proximity.distance=60
 # could use this property too. IKMAIN-732
 #1 this is verizon wireless globle phone
 #0 this is not verizon wireless globle phone
-ro.mot.phonemode.vzwglobalphone=0
+ro.mot.phonemode.vzwglobalphone=1
 # END Motorola, nfjb73, 21-jun-2010, IKMAIN-732
 
 # BEGIN Motorola, nfjb73 23-jun-2010, IKMAIN-624
@@ -90,7 +90,7 @@ persist.radio.vzw.cdma.mdn=
 # This is part of the VZW World-phone Feature. SMS are always sent to a US SMSC and then injected
 # into that network. This allows for billing and give the user the impression that the device is
 # still in the US.
-ro.telephony.gsm-routes-us-smsc = 1
+ro.telephony.gsm-routes-us-smsc = 0
 # END  Motorola, qmfd78, 14-Jul-2010, IKMAIN-884
 
 # BEGIN Motorola, a22600 qmfd78, 16-Jul-2010, IKDROIDPRO-423
@@ -107,7 +107,7 @@ ro.mot.dpmext = true
 # BEGIN Moto, IKSTABLETWO-689, nfjb73, for 34387,33857
 # when phone in Global mode, FW need to know the last phone mode beore power off
 # when phone power up, it would use the right mode to avoid switch
-persist.radio.ap.phonetype=2
+persist.radio.ap.phonetype=1
 # END IKSTABLETWO-689
 
 # Motorola, IKHALFMWK-3, w001091
@@ -134,7 +134,7 @@ com.motorola.cg.tndisplay=1
 
 #BEGIN Motorola IKSTABLE6-10018, RRYSZKO1
 # Physical keyboard with dedicated caps lock key and no Alt key (ex. Maserati)
-ro.hwKeyboard.capsLockNoAlt=true
+ro.hwKeyboard.capsLockNoAlt=false
 #END IKSTABLE6-10018
 
 # system prop for requesting Master role in incoming Bluetooth connection.
@@ -154,12 +154,12 @@ persist.ril.mux.ttydevice=/dev/ttyO0
 persist.ril.modem.ttydevice=/dev/usb/tty2-1:1.4
 persist.ril.tcmd.ttydevice=/dev/usb/tty2-1:1.3
 persist.ril.diag.ttydevice=/dev/usb/tty2-1:1.0
-persist.ril.features=0x90A
+persist.ril.features=0x182
 persist.ril.mux.sleep=2
 persist.ril.rssi.enable.param6=1
 ril.wrigley.modem.tty=/dev/usb/tty1-2:1.10
-persist.radio.lte.mm.disable=0
-rild.libpath=/system/lib/moto-ril-multimode.so
+persist.radio.lte.mm.disable=1
+# rild.libpath=/system/lib/moto-ril-multimode.so
 gsm.sim.mot.simswap=1
 ro.com.google.gmsversion=4.1_r3
 ro.HorizontalBUA=true
@@ -169,8 +169,8 @@ ro.horizontalVMM=false
 ro.horizontalMOD=false
 ro.horizontalVOD=false
 ro.horizontalEmail=false
-ro.mot.phonemode.vzw4gphone=1
-ro.com.android.dataroaming=true
+ro.mot.phonemode.vzw4gphone=0
+ro.com.android.dataroaming=false
 ro.cdma.subscription=0
 lte_ril.libpath=/system/lib/lib-mot-lte-ril.so
 cdma_ril.libpath=/system/lib/libmoto_ril.so
@@ -183,7 +183,7 @@ ro.gsm.2nd_data_retry_config=max_retries=infinite,default_randomization=2000,0,0
 ro.mot.setuptype=2
 ro.horizontalIM=true
 ro.ril.svlte1x=true
-ro.mot.lte_on_cdma=1
+ro.mot.lte_on_cdma=0
 ro.mot.tmp.telephony.refactor=true
 ro.mot.dpmext=true
 ro.com.google.clientid=android-motorola
